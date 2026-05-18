@@ -28,7 +28,9 @@ app.post('/call', async (req, res) => {
 
     let result;
     if (method === 'browser.navigate') {
-      await page.goto(params.url, { waitUntil: 'networkidle', timeout: 30000 });
+      await page.goto(params.url, { waitUntil: 'domcontentloaded', timeout: 15000 });
+      // Extra sleep to let JS-heavy apps (Bubble) settle
+      await new Promise(r => setTimeout(r, 3000));
       result = { ok: true };
     } 
     else if (method === 'browser.click') {
