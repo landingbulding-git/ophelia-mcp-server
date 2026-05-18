@@ -1,0 +1,13 @@
+{
+  "name": "ophelia-mcp-server",
+  "version": "1.0.0",
+  "description": "Cloud browser engine for Ophelia self-healing guides",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "playwright": "^1.49.1"
+  }
+}
